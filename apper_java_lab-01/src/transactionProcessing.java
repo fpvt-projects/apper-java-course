@@ -22,7 +22,7 @@ public class transactionProcessing {
         //Show All Transaction base on given Transaction Type
         showTransactionType(billsTransaction);
         //Checking Duplicate and Unique (In Progress)
-        checkDupAndUnique();
+        //checkDupAndUnique();
     }
 
     //Initialization Method/Function

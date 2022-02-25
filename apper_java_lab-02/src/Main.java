@@ -50,9 +50,15 @@ public class Main {
             case 1 -> logger.info("TERMINATE-PROGRAM");
             case 2 -> sendSMS();
             case 3 -> System.out.println("Switch_3");
-            case 4 -> System.out.println("Switch_4");
-            case 5 -> System.out.println("Switch_5");
-            case 6 -> System.out.println("Switch_6");
+            case 4 -> {
+                SMS newAction_promo = new SMS();
+                newAction_promo.retrieveSMS_Code();
+            }
+            case 5 -> {
+                SMS newAction_msisdn = new SMS();
+                newAction_msisdn.retrieveSMS_MSISDN();
+            }
+            case 6 -> System.out.println("NOT-YET-WORKING");
             case 7 -> retrievePromo();
             case 8 -> insertPromo();
             case 9 -> insertAdditionalSMS();
@@ -81,7 +87,8 @@ public class Main {
                 System.out.print("SHORTCODE: \n");
 
                 int shortToString = Integer.parseInt(inputSHORTCODE);
-                SMS_Model sms = new SMS_Model(inputMSISDN, inputMESSAGE, "SOME-RECIPIENT", fname, shortToString, dateValidation(inputMESSAGE), dateTime);
+                SMS_Model sms = new SMS_Model(inputMSISDN, inputMESSAGE, "SOME-RECIPIENT",
+                        fname, shortToString, dateValidation(inputMESSAGE), dateTime);
                 SMS data = new SMS();
                 data.insertSMS(sms);
 
@@ -178,6 +185,7 @@ public class Main {
             int short1code = rs.getInt("shortcode");
             String start_date = rs.getString("start_date");
             String end_date = rs.getString("end_date");
+
 
             logger.info("[PROMO]" + "\n" +
                     "PROMO-CODE: " + promo_code + "\n" +
