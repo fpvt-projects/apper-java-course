@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.Random;
 
 public class Main {
     final private static Logger logger = Logger.getLogger(Main.class.getName());
@@ -21,7 +22,8 @@ public class Main {
 
     //MAIN-METHOD
     public static void main(String[] args) throws SQLException {
-        showMenu();
+     showMenu();
+
     }
 
     //MENU-Method:
@@ -34,7 +36,8 @@ public class Main {
         System.out.println("[5] - RETRIEVE SMS (SINGLE MSISDN)");
         System.out.println("[6] - RETRIEVE SMS (MULTIPLE MSISDN)");
         System.out.println("[7] - AVAILABLE PROMOS");
-        System.out.println("[8] - ADD PROMO");
+        System.out.println("[8] - POPULATE PROMO");
+        System.out.println("[9] - POPULATE SMS");
         System.out.println("=========================================");
 
         getUserInput();
@@ -52,6 +55,7 @@ public class Main {
             case 6 -> System.out.println("Switch_6");
             case 7 -> retrievePromo();
             case 8 -> insertPromo();
+            case 9 -> insertAdditionalSMS();
         }
     }
 
@@ -188,5 +192,27 @@ public class Main {
     //ADD-ADDITIONAL-PROMO
     static void insertPromo(){
 
+    }
+
+    //ADDITIONAL-SMS-USERS
+    static void insertAdditionalSMS() throws SQLException {
+        DBConnect.connect();
+        Random random = new Random();
+        int counter = 0;
+        while(counter < 30) {
+            int randomizer = 5;
+            int int_randomizer = random.nextInt(randomizer);
+            String[] randomMSISDN = {"+639175589110", "+639175589111", "+639175589112", "+639175589113", "+639175589115", "+639175589115"};
+            String[] randomPromo = {"JUICE-BOX", "FEB-FOOD", "PISO-PIZZA", "DEV-PROMO", "ALIVE-WELL"};
+            int[] randomShortCode = {1550 , 1235, 1551, 1660, 1420};
+            SMS_Model sms = new SMS_Model(randomMSISDN[int_randomizer], randomPromo[int_randomizer],
+                    "SOME-RECIPIENT", "SOME-SENDER", randomShortCode[int_randomizer],
+                    dateValidation(randomPromo[int_randomizer]), dateTime);
+            SMS data = new SMS();
+            data.insertSMS(sms);
+            counter++;
+        }
+        logger.warning("[POPULATED-SMS]\n");
+        DBConnect.disconnect();
     }
 }
