@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="605ebecc-da21-437c-8835-f027c9275d5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transactionProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transactionProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/SMS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/SMS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/SMS_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/out/production/apper_java_lab-02/SMS_Interface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/src/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/src/SMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apper_java_lab-02/src/SMS_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../apper_java_lab-02/src/SMS_Interface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../apper_java_lab-02" />
   </component>
   <component name="RunManager">
     <configuration name="transactionProcessing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

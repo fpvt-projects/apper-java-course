@@ -48,14 +48,14 @@ public class SMS implements SMS_Interface {
             String sender = rs.getString("sender");
             String date = rs.getString("timestamp");
 
-            logger.info("[PROMO]" + "\n" +
-                    "PROMO-CODE: " + promo_code + "\n" +
-                    "DETAILS: " + details + "\n" +
+            logger.info("[SMS]" + "\n" +
+                    "MSISDN: " + promo_code + "\n" +
+                    "PROMO: " + details + "\n" +
                     "SHORTCODE: " + short1code + "\n" +
                     "STATUS: " + status + "\n" +
-                    "START-DATE: " + recipient + "\n" +
-                    "START-DATE: " + sender + "\n" +
-                    "END-DATE: " + date + "\n");
+                    "RECIPIENT " + recipient + "\n" +
+                    "SENDER: " + sender + "\n" +
+                    "DATE: " + date + "\n");
         }
         DBConnect.disconnect();
 
@@ -80,14 +80,14 @@ public class SMS implements SMS_Interface {
             String sender = rs.getString("sender");
             String date = rs.getString("timestamp");
 
-            logger.info("[PROMO]" + "\n" +
-                    "PROMO-CODE: " + promo_code + "\n" +
-                    "DETAILS: " + details + "\n" +
+            logger.info("[SMS]" + "\n" +
+                    "MSISDN: " + promo_code + "\n" +
+                    "PROMO: " + details + "\n" +
                     "SHORTCODE: " + short1code + "\n" +
                     "STATUS: " + status + "\n" +
-                    "START-DATE: " + recipient + "\n" +
-                    "START-DATE: " + sender + "\n" +
-                    "END-DATE: " + date + "\n");
+                    "RECIPIENT " + recipient + "\n" +
+                    "SENDER: " + sender + "\n" +
+                    "DATE: " + date + "\n");
         }
         DBConnect.disconnect();
     }
