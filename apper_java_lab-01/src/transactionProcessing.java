@@ -38,16 +38,16 @@ public class transactionProcessing {
         Random ran = new Random();
         int index = ran.nextInt(cName.length);
         int nxt = ran.nextInt(8999) + 1000;
-        int mt = 0;
+        int mtransfer = 0;
         int bill = 0;
         int load = 0;
         int aCredits = 0;
         int gCredits = 0;
 
         //[5]MONEY-TRANSFER DATA
-        while (mt < 5) {
+        while (mtransfer < 5) {
             transactions.add(new moneyTransfer(nxt, nxt, nxt, date, bill, uName[index]));
-            mt++;
+            mtransfer++;
         }
 
         //[3]BILLS-PAYMENT DATA
@@ -150,6 +150,6 @@ public class transactionProcessing {
                 }
             }
         }
-        logger.warning("CHECK-DUPLICATE-AND-UNIQUE [STILL IN PROGRESS]");
+        logger.warning("CHECK-DUPLICATE-AND-UNIQUE");
     }
 }
