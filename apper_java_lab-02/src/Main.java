@@ -32,13 +32,13 @@ public class Main {
         System.out.println("=========================================");
         System.out.println("[1] - EXIT"); //WORKING
         System.out.println("[2] - SEND SMS"); //WORKING
-        System.out.println("[3] - RETRIEVE SMS (START & END DATE) -- NOT WORKING");
+        System.out.println("[3] - RETRIEVE SMS (START & END DATE) "); //WORKING
         System.out.println("[4] - RETRIEVE SMS (PROMO REGISTERED)"); //WORKING
         System.out.println("[5] - RETRIEVE SMS (SINGLE MSISDN)"); //WORKING
-        System.out.println("[6] - RETRIEVE SMS (MULTIPLE MSISDN) -- NOT WORKING");
+        System.out.println("[6] - RETRIEVE SMS (MULTIPLE MSISDN)"); //WORKING
         System.out.println("[7] - AVAILABLE PROMOS"); //WORKING
-        System.out.println("[8] - POPULATE PROMO -- IN PROGRESS");
-        System.out.println("[9] - POPULATE SMS -- DID NOT UNDER-GO PROPER VALIDATION"); //WORKING
+        System.out.println("[8] - POPULATE PROMO"); //---- IN PROGRESS
+        System.out.println("[9] - POPULATE SMS"); //WORKING ---- DID NOT UNDER-GO PROPER VALIDATION
         System.out.println("[10] - FAILED SMS"); //WORKING
         System.out.println("[11] - SUCCESS SMS"); //WORKING
         System.out.println("=========================================");
@@ -52,7 +52,10 @@ public class Main {
         switch (input) {
             case 1 -> logger.info("TERMINATE-PROGRAM");
             case 2 -> sendSMS();
-            case 3 -> System.out.println("Switch_3");
+            case 3 -> {
+                SMS newAction_Date = new SMS();
+                newAction_Date.retrieveSMS_Date();
+            }
             case 4 -> {
                 SMS newAction_promo = new SMS();
                 newAction_promo.retrieveSMS_Code();
@@ -61,7 +64,10 @@ public class Main {
                 SMS newAction_msisdn = new SMS();
                 newAction_msisdn.retrieveSMS_MSISDN();
             }
-            case 6 -> System.out.println("NOT-YET-WORKING");
+            case 6 -> {
+                SMS newAction_multipleMSISDN = new SMS();
+                newAction_multipleMSISDN.retrieveSMS_multipleMSISDN();
+            }
             case 7 -> retrievePromo();
             case 8 -> insertPromo();
             case 9 -> insertAdditionalSMS();

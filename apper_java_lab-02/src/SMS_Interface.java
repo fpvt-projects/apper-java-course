@@ -5,5 +5,5 @@ public interface SMS_Interface {
     void retrieveSMS_Date() throws SQLException;
     void retrieveSMS_Code() throws SQLException;
     void retrieveSMS_MSISDN() throws SQLException;
-    void retrieveSMS_multipleMSISDN();
+    void retrieveSMS_multipleMSISDN() throws SQLException;
 }
