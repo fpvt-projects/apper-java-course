@@ -12,8 +12,13 @@ public class bills extends transaction{
     }
 
     public String toString() {
-        String value = this.store_id + " " + this.transaction_id + " " + this.account_id + " " + this.timestamp + " " +
-                this.amount + " " + this.company_name + " " + this.bills_charge;
+        String value = "STORE_ID: " + this.store_id +
+                "\n" + "TRANSACTION_ID: " +  this.transaction_id +
+                "\n" + "ACCOUNT_ID: " + this.account_id +
+                "\n" + "TIMESTAMP_ID: " + this.timestamp +
+                "\n" + "AMOUNT_ID: " + this.amount +
+                "\n" + "COMPANY_NAME: " + this.company_name +
+                "\n" + "BILLS_CHARGE: " + this.bills_charge;
         return value;
     }
 }

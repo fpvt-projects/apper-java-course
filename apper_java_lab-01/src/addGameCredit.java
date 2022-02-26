@@ -8,8 +8,12 @@ public class addGameCredit extends transaction{
         this.company_name = company_name;
     }
     public String toString() {
-        String value = this.store_id + " " + this.transaction_id + " " + this.account_id + " " + this.timestamp + " " +
-                this.amount + " " + this.company_name;
+        String value = "STORE_ID: " + this.store_id +
+                "\n" + "TRANSACTION_ID: " + this.transaction_id +
+                "\n" + "ACCOUNT_ID: " + this.account_id +
+                "\n" + "TIMESTAMP: " + this.timestamp +
+                "\n" + "AMOUNT: " + this.amount +
+                "\n" + "COMPANY_NAME: " + this.company_name;
         return value;
     }
 }

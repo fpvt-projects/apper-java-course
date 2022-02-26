@@ -9,10 +9,22 @@ public class moneyTransfer extends transaction{
         this.recipient = recipient;
     }
 
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
     @Override
     public String toString(){
-        String value = this.store_id + " " + this.transaction_id + " " + this.account_id + " " + this.timestamp + " " +
-                this.amount + " " + this.recipient;
+        String value = "STORE_ID: " + this.store_id +
+                "\n" + "TRANSACTION_ID: " + this.transaction_id +
+                "\n" + "ACCOUNT_ID: " + this.account_id +
+                "\n" + "TIMESTAMP: " + this.timestamp +
+                "\n" + "AMOUNT: " + this.amount +
+                "\n" + "RECIPIENT: " + this.recipient;
         return value;
     }
 }

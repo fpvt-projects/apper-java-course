@@ -9,8 +9,12 @@ public class buyLoad extends transaction{
     }
 
     public String toString() {
-        String value = this.store_id + " " + this.transaction_id + " " + this.account_id + " " + this.timestamp + " " +
-                this.amount + " " + this.msisdn;
+        String value = "STORE_ID: " + this.store_id +
+                "\n" + "TRANSACTION_ID: " + this.transaction_id +
+                "\n" + "ACCOUNT_ID: " + this.account_id +
+                "\n" + "TIMESTAMP: " + this.timestamp +
+                "\n" + "AMOUNT: " + this.amount +
+                "\n" + "MSISDN: " + this.msisdn;
         return value;
     }
 }

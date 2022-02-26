@@ -32,13 +32,13 @@ public class Main {
         System.out.println("=========================================");
         System.out.println("[1] - EXIT"); //WORKING
         System.out.println("[2] - SEND SMS"); //WORKING
-        System.out.println("[3] - RETRIEVE SMS (START & END DATE)");
+        System.out.println("[3] - RETRIEVE SMS (START & END DATE) -- NOT WORKING");
         System.out.println("[4] - RETRIEVE SMS (PROMO REGISTERED)"); //WORKING
         System.out.println("[5] - RETRIEVE SMS (SINGLE MSISDN)"); //WORKING
-        System.out.println("[6] - RETRIEVE SMS (MULTIPLE MSISDN)");
+        System.out.println("[6] - RETRIEVE SMS (MULTIPLE MSISDN) -- NOT WORKING");
         System.out.println("[7] - AVAILABLE PROMOS"); //WORKING
-        System.out.println("[8] - POPULATE PROMO");
-        System.out.println("[9] - POPULATE SMS"); //WORKING
+        System.out.println("[8] - POPULATE PROMO -- IN PROGRESS");
+        System.out.println("[9] - POPULATE SMS -- DID NOT UNDER-GO PROPER VALIDATION"); //WORKING
         System.out.println("[10] - FAILED SMS"); //WORKING
         System.out.println("[11] - SUCCESS SMS"); //WORKING
         System.out.println("=========================================");

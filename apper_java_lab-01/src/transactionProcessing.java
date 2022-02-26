@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.logging.*;
 import java.text.*;
+import java.util.HashSet;
 
 public class transactionProcessing {
     final private static Logger logger = Logger.getLogger(transactionProcessing.class.getName());
@@ -17,12 +18,15 @@ public class transactionProcessing {
     public static void main(String[] args) {
         //Invoke Data
         init();
+
         //Show All Transaction in ArrayList(transaction)
         showTransaction();
+
         //Show All Transaction base on given Transaction Type
         showTransactionType(billsTransaction);
+
         //Checking Duplicate and Unique (In Progress)
-        //checkDupAndUnique();
+        checkDupAndUnique();
     }
 
     //Initialization Method/Function
@@ -49,11 +53,8 @@ public class transactionProcessing {
         //[3]BILLS-PAYMENT DATA
         transactions.add(new bills(0001, 2525, 7777, date, 250.25, "7-Eleven", 10.25));
         transactions.add(new bills(0001, 2525, 7777, date, 250.25, "7-Eleven", 10.25));
-        transactions.add(new bills(0001, 3525, 5235, date, 300.25, "DBlitz", 5.25));
-//        while( bill < 3){
-//            transactions.add(new bills(nxt,nxt,nxt,date,bill,cName[index],nxt));
-//            bill++;
-//        }
+        transactions.add(new bills(0002, 3525, 5235, date, 300.25, "DBlitz", 5.25));
+
         //[5]BUY-LOAD
         while (load < 5) {
             transactions.add(new buyLoad(nxt, nxt, nxt, date, 250.25, 09175582631f));
@@ -76,7 +77,7 @@ public class transactionProcessing {
     //Method to display all Transactions
     static void showTransaction() {
         for (int index = 0; index < transactions.size(); index++) {
-            logger.log(Level.INFO, "Entry : " + transactions.get(index));
+            logger.log(Level.INFO, "[ENTRY]" +  "\n" + transactions.get(index) + "\n");
         }
     }
 
@@ -87,7 +88,7 @@ public class transactionProcessing {
             case billsPayment -> {
                 for (transaction transaction : transactions) {
                     if (transaction instanceof bills) {
-                        logger.log(Level.INFO, "Entry : " + transaction);
+                        logger.log(Level.INFO, "[BILLS-PAYMENT]: " + "\n" + transaction + "\n");
                     }
                 }
             }
@@ -96,7 +97,7 @@ public class transactionProcessing {
             case moneyTransfer -> {
                 for (transaction transaction : transactions) {
                     if (transaction instanceof moneyTransfer) {
-                        logger.log(Level.INFO, "Entry : " + transaction);
+                        logger.log(Level.INFO, "[MONEY-TRANSFER] : " + "\n" + transaction + "\n");
                     }
                 }
             }
@@ -105,7 +106,7 @@ public class transactionProcessing {
             case addAccountCredits -> {
                 for (transaction transaction : transactions) {
                     if (transaction instanceof addAccountCredit) {
-                        logger.log(Level.INFO, "Entry : " + transaction);
+                        logger.log(Level.INFO, "[ACCOUNT-CREDIT] : " + "\n" + transaction + "\n");
                     }
                 }
             }
@@ -114,7 +115,7 @@ public class transactionProcessing {
             case addGameCredits -> {
                 for (transaction transaction : transactions) {
                     if (transaction instanceof addGameCredit) {
-                        logger.log(Level.INFO, "Entry : " + transaction);
+                        logger.log(Level.INFO, "[GAME-CREDIT] : " + "\n" + transaction + "\n");
                     }
                 }
             }
@@ -123,7 +124,7 @@ public class transactionProcessing {
             case buyLoad -> {
                 for (transaction transaction : transactions) {
                     if (transaction instanceof buyLoad) {
-                        logger.log(Level.INFO, "Entry : " + transaction);
+                        logger.log(Level.INFO, "[BUY-LOAD] : " + "\n" + transaction + "\n");
                     }
                 }
             }
@@ -131,6 +132,24 @@ public class transactionProcessing {
     }
 
     static void checkDupAndUnique() {
+        //IN-PROGRESS
 
+        //PUT-BILLSPAYMENT-TRANSACTIONS-IN-AN-ARRAY-LIST
+        ArrayList<transaction> newtransactions = new ArrayList<>();
+        for (transaction transaction : transactions) {
+            if (transaction instanceof bills) {
+                newtransactions.add(transaction);
+            }
+        }
+
+        //CHECKS-FOR-DUPLICATE
+        for (int i = 0; i < newtransactions.size(); i++) {
+            for (int j = i + 1; j <newtransactions.size() ; j++) {
+                if(newtransactions.get(i).equals(newtransactions.get(j))){
+                    System.out.println(newtransactions.get(i));
+                }
+            }
+        }
+        logger.warning("CHECK-DUPLICATE-AND-UNIQUE [STILL IN PROGRESS]");
     }
 }
