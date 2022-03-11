@@ -12,12 +12,12 @@ public class Main {
     }
 
     public static void init() {
-        System.out.println("================================");
+        System.out.println("===========================");
         System.out.println("[1] - Input");
         System.out.println("[2] - Undo");
         System.out.println("[3] - States");
         System.out.println("[4] - Exit");
-        System.out.println("================================");
+        System.out.println("===========================");
         System.out.print("Response: ");
         int input = scan.nextInt();
         scan.nextLine();
@@ -27,7 +27,6 @@ public class Main {
             case 2 -> retrieveState();
             case 3 -> retrieveAll();
             case 4 -> logger.info("Program Terminated");
-
         }
     }
 
@@ -57,17 +56,15 @@ public class Main {
         originator.getStateFromMemento(careTaker.get());
         System.out.print("Input: " + originator.getState() + " ");
         String firstInput = scan.nextLine();
-        saveInput(firstInput);
+        String givenState = originator.getState().toString();
+        String finalInput = givenState + " " + firstInput;
+        saveInput(finalInput);
     }
 
     public static void retrieveAll(){
-        originator.getStateFromMemento(careTaker.specificGet(0));
-        logger.info("State 1: " + originator.getState());
-        originator.getStateFromMemento(careTaker.specificGet(1));
-        logger.info("State 2: " + originator.getState());
-        originator.getStateFromMemento(careTaker.specificGet(2));
-        logger.info("State 3: " + originator.getState());
-        originator.getStateFromMemento(careTaker.specificGet(3));
-        logger.info("State 4: " + originator.getState());
+        for(int counter = 0; counter < careTaker.stateCount(); counter++  ){
+            originator.getStateFromMemento(careTaker.specificGet(counter));
+            logger.info("State" + " " + counter + ": " + originator.getState());
+        }
     }
 }

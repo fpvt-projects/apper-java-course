@@ -16,4 +16,7 @@ public class CareTaker {
         return mementoList.get(index);
     }
 
+   public int stateCount(){
+        return mementoList.size();
+   }
 }
